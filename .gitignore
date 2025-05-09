@@ -1,0 +1,142 @@
+# ------------------------------ #
+# ---------- General ----------- #
+# ------------------------------ #
+
+# OS
+# Ref: https://github.com/github/gitignore/blob/main/Global/macOS.gitignore
+# Ref: https://github.com/github/gitignore/blob/main/Global/Windows.gitignore
+# Ref: https://github.com/github/gitignore/blob/main/Global/Linux.gitignore
+.DS_Store
+Thumbs.db
+*.sh
+*.bat
+
+# Editors
+# Ref: https://github.com/github/gitignore/blob/main/Global
+# Ref: https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+# Ref: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+# Ref: https://github.com/github/gitignore/blob/main/Global/SublimeText.gitignore
+.history
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+
+# ------------------------------ #
+# --------- JavaScript --------- #
+# ------------------------------ #
+
+# Logs
+plugin/logs/
+plugin/*.log
+plugin/npm-debug.log*
+plugin/yarn-debug.log*
+plugin/yarn-error.log*
+plugin/lerna-debug.log*
+plugin/.pnpm-debug.log*
+
+# Bower dependency directory (https://bower.io/)
+plugin/bower_components/
+
+# Dependency directories
+plugin/jspm_packages/
+plugin/node_modules/
+
+# TypeScript cache
+plugin/*.tsbuildinfo
+
+# Optional npm cache directory
+plugin/.npm/
+
+# Optional eslint cache
+plugin/.eslintcache/
+
+# Optional stylelint cache
+plugin/.stylelintcache/
+
+# dotenv environment variable files
+plugin/.env
+plugin/.env.development.local
+plugin/.env.test.local
+plugin/.env.production.local
+plugin/.env.local
+
+# parcel-bundler cache (https://parceljs.org/)
+plugin/.cache/
+plugin/.parcel-cache/
+
+# ------------------------------ #
+# ----------- Python ----------- #
+# ------------------------------ #
+
+# Byte-compiled / optimized / DLL files
+webscrape-tsconfig/__pycache__/
+webscrape-tsconfig/*.py[cod]
+webscrape-tsconfig/*$py.class
+
+# C extensions
+webscrape-tsconfig/*.so
+
+# Distribution / Packaging
+webscrape-tsconfig/.Python
+webscrape-tsconfig/build/
+webscrape-tsconfig/develop-eggs/
+webscrape-tsconfig/dist/
+webscrape-tsconfig/downloads/
+webscrape-tsconfig/eggs/
+webscrape-tsconfig/.eggs/
+webscrape-tsconfig/lib/
+webscrape-tsconfig/lib64/
+webscrape-tsconfig/parts/
+webscrape-tsconfig/sdist/
+webscrape-tsconfig/var/
+webscrape-tsconfig/wheels/
+webscrape-tsconfig/share/python-wheels/
+webscrape-tsconfig/*.egg-info/
+webscrape-tsconfig/.installed.cfg
+webscrape-tsconfig/*.egg
+webscrape-tsconfig/MANIFEST
+
+# Unit test / coverage reports
+webscrape-tsconfig/htmlcov/
+webscrape-tsconfig/.tox/
+webscrape-tsconfig/.nox/
+webscrape-tsconfig/.coverage
+webscrape-tsconfig/.coverage.*
+webscrape-tsconfig/.cache
+webscrape-tsconfig/nosetests.xml
+webscrape-tsconfig/coverage.xml
+webscrape-tsconfig/*.cover
+webscrape-tsconfig/*.py,cover
+webscrape-tsconfig/.hypothesis/
+webscrape-tsconfig/.pytest_cache/
+webscrape-tsconfig/cover/
+
+# Django
+webscrape-tsconfig/*.log
+webscrape-tsconfig/local_settings.py
+webscrape-tsconfig/db.sqlite3
+webscrape-tsconfig/db.sqlite3-journal
+
+# Environments
+webscrape-tsconfig/.env/
+webscrape-tsconfig/env/
+webscrape-tsconfig/.venv/
+webscrape-tsconfig/venv/
+webscrape-tsconfig/.env.bak/
+webscrape-tsconfig/env.bak/
+webscrape-tsconfig/.venv.bak/
+webscrape-tsconfig/venv.bak/
+webscrape-tsconfig/ENV/
+
+# Ruff
+webscrape-tsconfig/.ruff_cache/
+
+# ------------------------------ #
+# ------------ *** ------------- #
+# ------------------------------ #
+
+webscrape-tsconfig/selenium-drivers/
