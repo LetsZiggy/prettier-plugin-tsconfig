@@ -1,0 +1,26 @@
+$schema: 'https://raw.githubusercontent.com/evilmartians/lefthook/master/schema.json'
+
+# prepare-commit-msg:
+#   commands:
+#     commitizen:
+#       interactive: true
+#       run: exec < /dev/tty && pnpm exec cz --hook || true
+#       env:
+#         LEFTHOOK: 0
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit $1
+
+pre-commit:
+  # parallel: true
+  commands:
+    eslint:
+      glob: '{.[!.],}*.{js,ts}'
+      run: pnpm exec eslint --max-warnings 0 --no-warn-ignored --fix {staged_files}
+      stage_fixed: true
+    prettier:
+      glob: '{.[!.],}*.json'
+      run: pnpm exec prettier --write {staged_files}
+      stage_fixed: true
