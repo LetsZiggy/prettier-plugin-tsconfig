@@ -1,0 +1,18 @@
+$schema: 'https://raw.githubusercontent.com/evilmartians/lefthook/master/schema.json'
+
+commit-msg:
+  commands:
+    go-gitlint:
+      run: 'go-gitlint --path="$(git root)" --msg-file="$(git root)/{1}" --since=$(date +"%Y-%m-%d") --max-parents=1 --subject-regex="(?:^Initial commit$)|(?:^(?:fixup! )?(?:(?:feat)|(?:fix)|(?:docs)|(?:style)|(?:refactor)|(?:perf)|(?:test)|(?:build)|(?:ci)|(?:chore)|(?:revert))(?:\([^()A-Z\r\n]+\))?: (?:(?:LICENSE)|(?:README)|(?:[^A-Z\r\n ][^A-Z\r\n]+[^. ]))$)"'
+
+pre-commit:
+  # parallel: true
+  commands:
+    eslint:
+      glob: '{.[!.],}*.{js,ts}'
+      run: echo -e "staged_files >>> {staged_files}\n"; pnpm exec eslint --max-warnings 0 --no-warn-ignored --fix {staged_files};
+      stage_fixed: true
+    prettier:
+      glob: '{.[!.],}*.json'
+      run: echo -e "staged_files >>> {staged_files}\n"; pnpm exec prettier --write {staged_files};
+      stage_fixed: true
