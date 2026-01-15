@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "prettier-plugin-tsconfig",
+	"version": "0.0.0",
+	"type": "module",
+	"description": "A Prettier plugin for formatting tsconfig.json",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/LetsZiggy/prettier-plugin-tsconfig"
+	},
+	"homepage": "https://github.com/LetsZiggy/prettier-plugin-tsconfig#readme",
+	"contributors": [
+		"Shafiq Tahir <shafiqtahir.khan@gmail.com>"
+	],
+	"license": "MIT",
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.cjs"
+	},
+	"files": [
+		"./dist"
+	],
+	"keywords": [
+		"formatter",
+		"prettier",
+		"prettier-plugin",
+		"tsconfig.json"
+	],
+	"peerDependencies": {
+		"prettier": "^3.5.3"
+	},
+	"dependencies": {
+		"strip-json-comments": "^5.0.3"
+	}
+}
