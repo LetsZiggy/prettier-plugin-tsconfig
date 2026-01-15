@@ -1,0 +1,73 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"name": "prettier-plugin-tsconfig-src",
+	"type": "module",
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"scripts": {
+		"build": "pnpm run prebuild:rm && pnpm run prebuild:tsc && pnpm exec parcel build && pnpm run postbuild:mv",
+		"fix:eslint": "pnpm exec eslint --config ./eslint.config.js --max-warnings 0 --no-warn-ignored --fix",
+		"fix:prettier": "pnpm exec prettier --config ./prettier.config.js --write",
+		"preinstall": "npx only-allow pnpm",
+		"postbuild:mv": "mv -f ./dist ../",
+		"prebuild:rm": "rm -rf ./dist && rm -rf ../dist",
+		"prebuild:tsc": "tsc --noEmit"
+	},
+	"peerDependencies": {
+		"prettier": "^3.5.3"
+	},
+	"dependencies": {
+		"prettier-plugin-tsconfig": "link:..",
+		"strip-json-comments": "^5.0.3"
+	},
+	"devDependencies": {
+		"@babel/types": "^8.0.4",
+		"@eslint/js": "^9.39.5",
+		"@parcel/bundler-library": "^2.16.4",
+		"@parcel/config-default": "^2.16.4",
+		"@parcel/packager-ts": "2.16.4",
+		"@parcel/transformer-typescript-types": "2.16.4",
+		"@stylistic/eslint-plugin": "^5.10.0",
+		"@total-typescript/ts-reset": "^0.6.1",
+		"@total-typescript/tsconfig": "^1.0.4",
+		"@types/node": "^26.1.1",
+		"eslint": "^9.39.5",
+		"eslint-import-resolver-typescript": "^4.4.5",
+		"eslint-plugin-import": "^2.32.0",
+		"eslint-plugin-n": "^18.2.2",
+		"eslint-plugin-promise": "^7.3.0",
+		"eslint-plugin-regexp": "^3.1.1",
+		"eslint-plugin-sort-class-members": "^1.22.1",
+		"eslint-plugin-sort-destructure-keys": "^3.0.0",
+		"eslint-plugin-unicorn": "^62.0.0",
+		"globals": "^17.7.0",
+		"parcel": "^2.16.4",
+		"prettier": "^3.9.5",
+		"prettier-plugin-pkg": "^0.22.1",
+		"tslib": "^2.8.1",
+		"type-fest": "^5.8.0",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.64.0"
+	},
+	"@parcel/resolver-default": {
+		"packageExports": true
+	},
+	"source": "./src/index.ts",
+	"targets": {
+		"default": {
+			"sourceMap": false,
+			"distDir": "./dist"
+		},
+		"main": {
+			"sourceMap": false,
+			"distDir": "./dist"
+		},
+		"module": {
+			"sourceMap": false,
+			"distDir": "./dist"
+		}
+	}
+}
