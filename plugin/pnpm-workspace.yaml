@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@swc/core'
+  - lmdb
+  - msgpackr-extract
+  - unrs-resolver
+
+overrides:
+  prettier-plugin-tsconfig: link:..
