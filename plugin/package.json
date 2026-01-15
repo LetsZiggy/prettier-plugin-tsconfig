@@ -14,7 +14,11 @@
 		"postbuild:mv": "mv -f ./dist ../",
 		"prebuild:rm": "rm -rf ./dist && rm -rf ../dist",
 		"prebuild:tsc": "tsc --noEmit",
-		"preinstall": "npx only-allow pnpm"
+		"preinstall": "npx only-allow pnpm",
+		"pretest:reset": "cp -f ./test/tsconfig.init.txt ./test/tsconfig.test.json",
+		"test": "pnpm run build && pnpm run test:api && pnpm run test:cli",
+		"test:api": "pnpm run pretest:reset && node ./test/test.spec.ts",
+		"test:cli": "pnpm run pretest:reset && pnpm exec prettier --config ./test/prettier.config.test.js --write ./test/tsconfig.test.json && diff ./test/tsconfig.test.json ./test/tsconfig.expect.txt | (read DIFF_OUT; if [ \"$DIFF_OUT\" = \"\" ]; then echo -e \"\\033[94m=== matches tsconfig.expect ===\\033[0m\"; else echo -e \"\\033[91m<<< does not match tsconfig.expect >>>\\033[0m\"; fi)"
 	},
 	"peerDependencies": {
 		"prettier": "^3.5.3"
