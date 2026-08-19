@@ -4,5 +4,5 @@
 	- [geckodriver](https://github.com/mozilla/geckodriver/releases)
 		- executable: `selenium-drivers/geckodriver`
 		- version-documentation: `selenium-drivers/geckodriver-version.txt`
-1. `python get-keys-order.py <DRIVER_PATH>`
-	- `python get-keys-order.py selenium-drivers/geckodriver`
+1. `uv run get-keys-order.py <DRIVER_PATH>`
+	- `uv run get-keys-order.py selenium-drivers/geckodriver`
